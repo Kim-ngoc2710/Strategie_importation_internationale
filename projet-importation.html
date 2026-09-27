@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Étude de marché internationale : consolidation de données, ACP, clustering et scoring de 114 pays.">
+  <title>Ciblage des marchés internationaux | Kim Ngoc Pham</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Accueil">Kim Ngoc <span>PHAM</span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a><a href="a-propos.html">À propos</a><a class="active" href="projets.html">Projets</a><a class="contact-link" href="mailto:kn.pham27@gmail.com">Contact</a>
+    </nav>
+  </header>
+
+  <main class="case-study">
+    <section class="case-hero market-hero reveal">
+      <a class="back-link" href="projets.html">← Retour aux projets</a>
+      <p class="eyebrow">Étude de marché · Analyse multivariée</p>
+      <h1>Ciblage des marchés internationaux</h1>
+      <p class="case-lead">Transformer des données économiques, démographiques et logistiques en une segmentation exploitable pour prioriser le développement international d’une offre de volaille.</p>
+      <div class="case-tags"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>ACP</span><span>K-Means</span><span>CAH</span><span>Scoring</span></div>
+      <div class="source-flow" aria-label="Étapes de l’étude">
+        <div><small>SOURCES</small><strong>FAOSTAT · WORLD BANK</strong></div>
+        <div><small>PRÉPARATION</small><strong>Jointures · Standardisation</strong></div>
+        <div><small>SEGMENTATION</small><strong>ACP · CAH · K-Means</strong></div>
+        <div><small>DÉCISION</small><strong>Scoring · Priorisation</strong></div>
+      </div>
+    </section>
+
+    <section class="case-kpis reveal" aria-label="Périmètre de l’analyse">
+      <article><small>Pays analysés</small><strong>114</strong></article>
+      <article><small>Population couverte</small><strong>85,3 %</strong></article>
+      <article><small>Variables retenues</small><strong>10</strong></article>
+      <article><small>Segments de marché</small><strong>3</strong></article>
+    </section>
+
+    <section class="case-section case-intro reveal">
+      <div><p class="eyebrow">Enjeu</p><h2>Comparer des marchés très différents sans réduire la décision à un seul indicateur.</h2></div>
+      <div class="case-copy"><p>Le potentiel d’un pays ne dépend pas uniquement de sa population ou de son pouvoir d’achat. La demande adressable doit être mise en regard de la production locale, des flux de volaille, de l’urbanisation, de la stabilité économique et politique ainsi que de la capacité logistique.</p><p>L’objectif est de construire une lecture comparable de ces facteurs, d’identifier des profils de marchés homogènes puis de hiérarchiser les pays les plus cohérents avec une stratégie d’expansion internationale.</p></div>
+    </section>
+
+    <section class="college-architecture market-sources reveal">
+      <p class="eyebrow">Données</p><h2>Réunir des indicateurs de marché, de risque et d’accessibilité.</h2>
+      <div class="architecture-grid">
+        <article><small>FAOSTAT</small><h3>Marché de la volaille</h3><p>Disponibilité intérieure, production, importations et exportations.</p></article>
+        <article><small>DÉMOGRAPHIE</small><h3>Taille de marché</h3><p>Population totale et part de population urbaine.</p></article>
+        <article><small>ÉCONOMIE & RISQUE</small><h3>Conditions de marché</h3><p>PIB par habitant, inflation et stabilité politique.</p></article>
+        <article><small>LOGISTIQUE</small><h3>Capacité d’accès</h3><p>Logistics Performance Index et qualité de la chaîne logistique.</p></article>
+      </div>
+    </section>
+
+    <section class="case-section quality-section reveal">
+      <div><p class="eyebrow">Préparation</p><h2>Construire une base internationale comparable et statistiquement exploitable.</h2></div>
+      <div class="quality-grid">
+        <article><h3>Référentiels pays</h3><p>Rapprochement des codes FAOSTAT et ISO3 à l’aide d’une table de correspondance.</p></article>
+        <article><h3>Valeurs manquantes</h3><p>Contrôle de la complétude par variable et exclusion raisonnée des observations insuffisantes.</p></article>
+        <article><h3>Distributions</h3><p>Transformation logarithmique des variables fortement asymétriques afin de limiter le poids des valeurs extrêmes.</p></article>
+        <article><h3>Échelles</h3><p>Standardisation des dix variables avant l’ACP et les algorithmes de clustering.</p></article>
+      </div>
+    </section>
+
+    <section class="chart-section market-method reveal">
+      <div class="chart-heading"><div><p class="eyebrow">Réduction dimensionnelle</p><h2>Résumer l’information sans perdre les facteurs structurants.</h2></div><p>Les deux premiers axes restituent environ 70 % de l’information. Un troisième axe est conservé pour le clustering afin d’atteindre près de 80 % de variance cumulée.</p></div>
+      <div class="chart-grid">
+        <figure><img src="assets/importation-variance.png" alt="Variance expliquée et variance cumulée par les composantes principales"><figcaption>Choix du nombre de composantes</figcaption></figure>
+        <figure><img src="assets/importation-cercle.png" alt="Cercle des corrélations de l’analyse en composantes principales"><figcaption>Lecture économique et logistique des axes</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="analysis-block market-axes reveal">
+      <div class="analysis-copy"><p class="eyebrow">Interprétation</p><h3>Deux dimensions structurent principalement les marchés.</h3><p>Le premier axe synthétise le niveau de développement économique, l’intégration commerciale et la performance logistique. Le second distingue davantage la taille du marché — population, production et disponibilité intérieure — des caractéristiques de richesse et de stabilité.</p></div>
+      <div class="axis-cards"><article><small>AXE 1</small><strong>Économie & logistique</strong><span>PIB · LPI · commerce · urbanisation</span></article><article><small>AXE 2</small><strong>Taille du marché</strong><span>Population · production · disponibilité</span></article></div>
+    </section>
+
+    <section class="chart-section chart-section-alt reveal">
+      <div class="chart-heading"><div><p class="eyebrow">Segmentation</p><h2>Comparer plusieurs partitions avant de retenir trois profils lisibles.</h2></div><p>La CAH permet d’observer la structure naturelle des pays. Les solutions à trois et quatre groupes sont comparées par leur séparation, leur coefficient de silhouette et surtout leur capacité à produire des segments interprétables.</p></div>
+      <figure class="chart-wide"><img src="assets/importation-clusters.png" alt="Comparaison de classifications ascendantes hiérarchiques à trois et quatre clusters"><figcaption>Comparaison CAH à 3 et 4 clusters sur le plan factoriel</figcaption></figure>
+    </section>
+
+    <section class="market-profiles reveal">
+      <p class="eyebrow">Profils de marché</p><h2>Trois contextes nécessitant des stratégies différentes.</h2>
+      <div><article><small>SEGMENT 01</small><h3>Grands marchés intermédiaires</h3><p>Population et volumes élevés, logistique relativement performante, mais niveaux de richesse et de stabilité plus hétérogènes.</p></article><article><small>SEGMENT 02</small><h3>Marchés émergents à risque</h3><p>PIB, urbanisation et performance logistique plus faibles, associés à davantage d’inflation et d’incertitude.</p></article><article><small>SEGMENT 03</small><h3>Marchés développés et stables</h3><p>Pouvoir d’achat, urbanisation, stabilité et logistique élevés, avec une taille démographique généralement plus modérée.</p></article></div>
+    </section>
+
+    <section class="analysis-block market-score reveal">
+      <div class="analysis-copy"><p class="eyebrow">Priorisation</p><h3>Passer de la segmentation à une liste de marchés actionnable.</h3><p>Au sein du segment retenu, les indicateurs sont normalisés puis combinés dans un score de ciblage. La taille du marché reçoit le poids principal, complétée par la performance logistique et la stabilité politique.</p><a class="project-link" href="https://github.com/Kim-ngoc2710/Strategie_importation_internationale" target="_blank" rel="noreferrer">Consulter le notebook sur GitHub <span>→</span></a></div>
+      <div class="score-formula"><small>SCORE DE CIBLAGE</small><div><strong>50 %</strong><span>Population</span></div><div><strong>30 %</strong><span>Performance logistique</span></div><div><strong>20 %</strong><span>Stabilité politique</span></div></div>
+    </section>
+
+    <section class="recommendations market-ranking reveal">
+      <p class="eyebrow">Résultat</p><h2>Dix marchés ressortent selon les critères retenus.</h2>
+      <ol><li><b>01</b>Pays-Bas</li><li><b>02</b>Suède</li><li><b>03</b>Belgique</li><li><b>04</b>Autriche</li><li><b>05</b>Suisse</li><li><b>06</b>Tchéquie</li><li><b>07</b>Émirats arabes unis</li><li><b>08</b>Portugal</li><li><b>09</b>Hong Kong</li><li><b>10</b>Finlande</li></ol>
+      <p class="ranking-note">Ce classement constitue un outil d’aide à la décision fondé sur les données disponibles. Il doit être complété par l’analyse de la concurrence, des barrières réglementaires, des coûts d’entrée et du positionnement produit.</p>
+    </section>
+
+    <section class="skills-summary reveal">
+      <p class="eyebrow">Compétences démontrées</p><h2>De sources publiques hétérogènes à une recommandation stratégique.</h2>
+      <div><article><small>DATA PREPARATION</small><p>Nettoyage, jointures multi-sources, référentiels pays et traitement des valeurs manquantes.</p></article><article><small>ANALYSE STATISTIQUE</small><p>Corrélations, distributions, transformations, standardisation et ACP.</p></article><article><small>MACHINE LEARNING</small><p>CAH, K-Means, coefficient de silhouette et comparaison de partitions.</p></article><article><small>DATA VISUALISATION</small><p>Variance expliquée, cercle des corrélations et projection des clusters.</p></article><article><small>SCORING</small><p>Normalisation, pondération multicritère et classement des marchés.</p></article><article><small>BUSINESS</small><p>Lecture des profils pays, limites de l’analyse et recommandations de ciblage.</p></article></div>
+    </section>
+
+    <section class="case-next"><a href="projets.html">Voir tous les projets <span>→</span></a></section>
+  </main>
+  <footer><p>© <span data-year></span> Kim Ngoc Pham</p><div><a href="mailto:kn.pham27@gmail.com">E-mail</a><a href="https://www.linkedin.com/in/kim-ngoc-pham/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/Kim-ngoc2710" target="_blank" rel="noreferrer">GitHub</a></div></footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>
